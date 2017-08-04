@@ -13,14 +13,14 @@ getclicks
 Probably the most fun command, getclicks will add the number of clicks you want.
 
 
-Syntax: `getclicks <integer\>`
+Syntax: `getclicks <integer>`
 
 setcost
 ------
 This command will set the cost of any building. **This command does not work on upgrades currently**
 
 
-Syntax (*Case Sensitive*): `setcost <Name\> <cost\>`
+Syntax (*Case Sensitive*): `setcost <Name> <cost>`
 
 forcesave
 ------
