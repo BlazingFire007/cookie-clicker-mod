@@ -16,6 +16,8 @@ Go to http://orteil.dashnet.org/cookieclicker/
 
 Commands:
 ======
+*(More Coming Soon)*
+
 getclicks
 ------
 Probably the most fun command, getclicks will add the number of clicks you want.
