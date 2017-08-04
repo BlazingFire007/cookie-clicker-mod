@@ -21,7 +21,7 @@ function cons() {
 
 function handle(code) {
     code = code.split(' ');
-    switch (code[0]) {
+    switch (code[0].toLowerCase()) {
     	case "getclicks":
     		Game.Earn(code[1]|0);
     		break;
