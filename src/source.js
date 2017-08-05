@@ -34,3 +34,4 @@ function handle(code) {
     		Game.WriteSave();
     		break;
     }
+}
