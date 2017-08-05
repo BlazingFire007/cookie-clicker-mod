@@ -16,13 +16,13 @@ function handle(code) {
     code = code.split(' ');
     switch (code[0].toLowerCase()) {
     	case "getclicks":
-    		Game.Earn(code[1]|0);
+    		Game.Earn(parseInt(code[1]));
     		break;
     	case "setcost":
     		if (Object.keys(Game.Objects).includes(code[1])) {
-    			Game.Objects[code[1]].getPrice = function(){return code[2]|0;};
+    			Game.Objects[code[1]].getPrice = function(){return parseInt(code[2]);};
     			Game.Objects[code[1]]._rebuild = Game.Objects[code[1]].rebuild;
-    			Game.Objects[code[1]].rebuild = function() { this.bulkPrice = code[2]|0; Game.Objects[code[1]]._rebuild.call(this);};
+    			Game.Objects[code[1]].rebuild = function() { this.bulkPrice = parseInt(code[2]); Game.Objects[code[1]]._rebuild.call(this);};
                 Game.Objects[code[1]].rebuild();
     		}
     		break;
@@ -34,4 +34,3 @@ function handle(code) {
     		Game.WriteSave();
     		break;
     }
-}
