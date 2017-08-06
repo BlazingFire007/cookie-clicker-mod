@@ -52,7 +52,7 @@ function handle(code) {
             break;
         case "autogold":
         	if (!code.includes("--nopopup")) {
-                Game.shimmerTypes.golden.popFunc = Game.shimmerTypes.golden._popFunc;
+                if (typeof Game.shimmerTypes.golden._popFunc === "function")Game.shimmerTypes.golden.popFunc = Game.shimmerTypes.golden._popFunc;
         		if (typeof autogold !== "number") { window.autogold = setInterval(()=>{Game.shimmers.length>0&&Game.shimmers[0].pop();}); } else { clearInterval(window.autogold); window.autogold = ""; }
         	} else {
                 Game.shimmerTypes.golden._popFunc = Game.shimmerTypes.golden.popFunc;
