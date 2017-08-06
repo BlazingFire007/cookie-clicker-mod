@@ -51,10 +51,17 @@ function handle(code) {
     		}
             break;
         case "autogold":
-        	if (typeof autogold !== "number") { window.autogold = setInterval(()=>{Game.shimmers.length>0&&Game.shimmers[0].pop();}) } else { clearInterval(window.autogold); window.autogold = ""; }
+        	if (!code.includes("--nopopup")) {
+                Game.shimmerTypes.golden.popFunc = Game.shimmerTypes.golden._popFunc;
+        		if (typeof autogold !== "number") { window.autogold = setInterval(()=>{Game.shimmers.length>0&&Game.shimmers[0].pop();}); } else { clearInterval(window.autogold); window.autogold = ""; }
+        	} else {
+                Game.shimmerTypes.golden._popFunc = Game.shimmerTypes.golden.popFunc;
+                Game.shimmerTypes.golden.popFunc = function(me){me.x = Game.windowW*2; me.y = Game.windowH*2; Game.shimmerTypes.golden._popFunc(me);};
+        		if (typeof autogold !== "number") { window.autogold = setInterval(()=>{Game.shimmers.length>0&&Game.shimmers[0].pop();}); } else { clearInterval(window.autogold); window.autogold = ""; }
+            }
         	break;
         case "autoclick":
-        	if (typeof autoclick !== "number") { window.autoclick = setInterval(Game.ClickCookie, 1) } else { clearInterval(window.autoclick); window.autoclick = ""; }
+        	if (typeof autoclick !== "number") { window.autoclick = setInterval(Game.ClickCookie, 1); } else { clearInterval(window.autoclick); window.autoclick = ""; }
         	break;
     }
 }
