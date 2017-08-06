@@ -3,13 +3,19 @@ if (typeof localStorage.mousetrap === "string") { let s = document.createElement
 var c=setInterval(()=>{
     if (document.readyState === "complete") {
         clearInterval(c);
-        cons();
+        setTimeout(()=>{cons();}, 1000);
     }
 }, 10);
 
 function cons() {
-    Mousetrap.bind("c", ()=>{handle(prompt());});
-    console.log("Console is ready...");
+    Mousetrap.bind("c", promptcom);
+    Game.Popup("console is ready", Game.windowW/2, Game.windowH/2);
+    setTimeout(()=>{Game.Popup("press c to open", Game.windowW/2, Game.windowH/2+40);}, 100);
+}
+
+function promptcom() {
+    Game.Prompt('<h3>Enter command:</h3><div class="block"><input type="text" style="text-align:center;width:100%;" id="console"/></div>',[['Confirm','handle(l("console").value);Game.ClosePrompt();'],'Cancel']);
+    setTimeout(()=>{l("console").focus();}, 10);
 }
 
 function handle(code) {
@@ -39,5 +45,17 @@ function handle(code) {
     	case "getaward":
     		Game.Win(code.slice(1));
     		break;
+    	case "spawngold":
+    		for (var i = 0; i < parseInt(code[1]); i++) {
+				((i)=>{setTimeout(()=>{new Game.shimmer("golden");}, 10*i);})(i);
+    		}
+            break;
+        case "autogold":
+        	if (typeof autogold !== "number") { window.autogold = setInterval(()=>{Game.shimmers.length>0&&Game.shimmers[0].pop();}) } else { clearInterval(window.autogold); window.autogold = ""; }
+        	break;
+        case "autoclick":
+        	if (typeof autoclick !== "number") { window.autoclick = setInterval(Game.ClickCookie, 1) } else { clearInterval(window.autoclick); window.autoclick = ""; }
+        	break;
     }
 }
+let s = document.createElement("script"); s.innerHTML = "var handle = "+handle.toString()+";"; document.body.append(s);
