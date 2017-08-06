@@ -19,7 +19,6 @@ function handle(code) {
     		Game.Earn(parseInt(code[1]));
     		break;
     	case "setcost":
-            console.log(code[1].replace('_', ' '));
     		if (Object.keys(Game.Objects).includes(code[1].replace('_', ' '))) {
     			Game.Objects[code[1].replace('_', ' ')].getPrice = function(){return parseInt(code[2]);};
     			Game.Objects[code[1].replace('_', ' ')]._rebuild = Game.Objects[code[1].replace('_', ' ')].rebuild;
