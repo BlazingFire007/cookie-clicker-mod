@@ -75,6 +75,7 @@ Automatically collects gold cookies.
 
 
 Syntax: `autogold` (*Run again to turn it off*)
+Options `--nopopup` *This will remove the annoyig popups when the autogold collects the cookies*
 
 autoclick
 ------
