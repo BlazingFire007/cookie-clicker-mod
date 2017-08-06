@@ -31,7 +31,7 @@ This command will set the cost of any building. **This command does not work on 
 *Note: If the building has a space in the name, please use an underscore ( _ )*
 
 
-Syntax (*Case Sensitive*): `setcost <Name> <cost>`
+Syntax (*Case Sensitive*): `setcost <Name> <integer>`
 
 forcesave
 ------
@@ -51,10 +51,34 @@ noanticheat
 ------
 Disables the game's anticheat for external spam clickers.
 
+
 Syntax: `noanticheat`
 
 getaward
 ------
 Will award you with any award you want.
 
+
 Syntax (*Case Sensitive*): `getaward <Name>`
+
+
+spawngold
+------
+Spawns gold cookies.
+
+
+Syntax: `spawngold <integer>`
+
+autogold
+------
+Automatically collects gold cookies.
+
+
+Syntax: `autogold` (*Run again to turn it off*)
+
+autoclick
+------
+Automatically clicks the cookie.
+
+
+Syntax: `autoclick` (*Run again to turn it off*)
