@@ -28,7 +28,7 @@ Syntax: `getclicks <integer>`
 setcost
 ------
 This command will set the cost of any building. **This command does not work on upgrades currently**
-*Note: If the building has a space in the name, please use an underscore (_)[]*
+*Note: If the building has a space in the name, please use an underscore ( _ )*
 
 
 Syntax (*Case Sensitive*): `setcost <Name> <cost>`
@@ -46,3 +46,15 @@ Deletes your save data.
 
 
 Syntax (*Will ask for confirmation*): `killdata`
+
+noanticheat
+------
+Disables the game's anticheat for external spam clickers.
+
+Syntax: `noanticheat`
+
+getaward
+------
+Will award you with any award you want.
+
+Syntax (*Case Sensitive*): `getaward <Name>`
