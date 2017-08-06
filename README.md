@@ -28,6 +28,7 @@ Syntax: `getclicks <integer>`
 setcost
 ------
 This command will set the cost of any building. **This command does not work on upgrades currently**
+*Note: If the building has a space in the name, please use an underscore (_)[]*
 
 
 Syntax (*Case Sensitive*): `setcost <Name> <cost>`
