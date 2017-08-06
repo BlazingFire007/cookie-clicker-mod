@@ -19,11 +19,12 @@ function handle(code) {
     		Game.Earn(parseInt(code[1]));
     		break;
     	case "setcost":
-    		if (Object.keys(Game.Objects).includes(code[1])) {
-    			Game.Objects[code[1]].getPrice = function(){return parseInt(code[2]);};
-    			Game.Objects[code[1]]._rebuild = Game.Objects[code[1]].rebuild;
-    			Game.Objects[code[1]].rebuild = function() { this.bulkPrice = parseInt(code[2]); Game.Objects[code[1]]._rebuild.call(this);};
-                Game.Objects[code[1]].rebuild();
+            console.log(code[1].replace('_', ' '));
+    		if (Object.keys(Game.Objects).includes(code[1].replace('_', ' '))) {
+    			Game.Objects[code[1].replace('_', ' ')].getPrice = function(){return parseInt(code[2]);};
+    			Game.Objects[code[1].replace('_', ' ')]._rebuild = Game.Objects[code[1].replace('_', ' ')].rebuild;
+    			Game.Objects[code[1].replace('_', ' ')].rebuild = function() { this.bulkPrice = parseInt(code[2]); Game.Objects[code[1].replace('_', ' ')]._rebuild.call(this);};
+                Game.Objects[code[1].replace('_', ' ')].rebuild();
     		}
     		break;
     	case "killdata":
@@ -32,6 +33,12 @@ function handle(code) {
     		break;
     	case "forcesave":
     		Game.WriteSave();
+    		break;
+    	case "noanticheat":
+    		setInterval(()=>{Game.autoclickerDetected = 0;}, 1);
+    		break;
+    	case "getaward":
+    		Game.Win(code.slice(1));
     		break;
     }
 }
