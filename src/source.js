@@ -1,4 +1,4 @@
-if (typeof localStorage.mousetrap === "undefined") fetch("https://cdn.rawgit.com/BlazingFire007/cookie-clicker-mod/master/depend/mousetrap.js").then(res=>{if (res.ok) return res.text();}).then(result=>{localStorage.setItem("mousetrap", result);location.reload();});
+if (typeof localStorage.mousetrap === "undefined") fetch("https://cdn.jsdelivr.net/gh/BlazingFire007/cookie-clicker-mod@master/depend/mousetrap.js").then(res=>{if (res.ok) return res.text();}).then(result=>{localStorage.setItem("mousetrap", result);location.reload();});
 if (typeof localStorage.mousetrap === "string") { let s = document.createElement("script"); s.innerHTML = "eval(localStorage.mousetrap);"; document.body.append(s); }
 var c=setInterval(()=>{
     if (document.readyState === "complete") {
