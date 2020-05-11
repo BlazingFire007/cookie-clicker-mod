@@ -8,7 +8,7 @@ To use this mod, you will need to have [Tampermonkey(Chrome)](https://tampermonk
 
 
 
-Click [here](https://github.com/BlazingFire007/cookie-clicker-mod/raw/master/ccmod.user.js) or click on the 'ccmod.user.js' file. Then click the 'raw' button.
+Click [here](https://github.com/BlazingFire007/cookie-clicker-mod/raw/master/ccmod.user.js) or click on the `ccmod.user.js` file. Then click the 'raw' button.
 
 
 Go to http://orteil.dashnet.org/cookieclicker/
